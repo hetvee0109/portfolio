@@ -1,0 +1,525 @@
+/* =========================================
+   1. General Reset & Base Styles
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar so titles aren't hidden */
+section, header {
+    scroll-margin-top: 90px;
+}
+
+body {
+    background-color: #000000; /* Main background remains black for contrast */
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #800080; /* Professional Purple */
+}
+
+.h2{
+    color: #800080;
+}
+
+/* =========================================
+   2. Navigation Bar (White Theme Style)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 8%;
+    background:black; 
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav-logo {
+    margin-right: auto;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.nav-logo span { color: #800080; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #800080;
+}
+
+.nav-links li:last-child a {
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Ensure it highlights on hover like others */
+.nav-links li:last-child a:hover {
+    color: #800080;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Hover */
+.nav-link:hover {
+    color: #800080;
+}
+
+.nav-link.active {
+    color: #800080;
+    font-weight: 600;
+}
+/* =========================================
+   3. Hero Section (Home)
+   ========================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10%;
+    margin-top: 80px;
+    height: 100vh;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#typing-text {
+    color: #800080;
+    font-weight: bold;
+}
+
+.social-links-hero {
+    margin-bottom: 45px;
+    display: flex;
+    gap: 25px;
+}
+
+.social-links-hero a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.social-links-hero a:hover {
+    color: #800080;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 4px solid #800080;
+    box-shadow: 0 0 25px rgba(128, 0, 128, 0.5);
+    object-position: center 35%;   /* 👈 focus on face */
+    transform: scale(1.1);         /* 👈 slight zoom for better framing */
+
+}
+
+/* =========================================
+   4. Unified White Theme Cards (Education, Skills, Projects)
+   ========================================= */
+.section-padding {
+    padding: 80px 10%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Base */
+.info-card, .project-card, .skill-card {
+    background: #ffffff;
+    color: #333333;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.info-card:hover, .project-card:hover, .skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(128, 0, 128, 0.15);
+}
+
+/* Grids */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.projects-grid, .achievements-grid, .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.category-subtitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+/* Optional subtle glow */
+.category-subtitle {
+    text-shadow: 0 0 10px rgba(128, 0, 128, 0.4);
+    text-align: left;
+    display: block;
+}
+
+/* =========================================
+   5. Card Content Details
+   ========================================= */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.date-tag {
+    background: #f3ebff;
+    color: #800080;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.institution {
+    font-weight: 700;
+    color: purple;
+    margin-bottom: 10px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.skill-list li::before {
+    content: "▹";
+    color: #800080;
+    position: absolute;
+    left: 0;
+}
+
+.skill-label {
+    font-weight: 700;
+    color: #111;
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   6. Projects Specifics
+   ========================================= */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tag {
+    background: #f0e6ff;
+    color: #800080;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.github-link {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Highlight word */
+.section-title .highlight {
+  color: #c084fc; /* soft purple */
+}
+
+/* Underline effect */
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #c084fc;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* =========================================
+   7. Buttons & Toggles
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #800080;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.show-more-btn {
+    background: transparent;
+    color: #800080;
+    border: 2px solid #800080;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.show-more-btn:hover {
+    background: #800080;
+    color: white;
+}
+
+.hidden-item { display: none !important; }
+
+/* =========================================
+   8. Contact Form
+   ========================================= */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+}
+
+/* GRID LAYOUT */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #c084fc;
+    outline: none;
+}
+
+/* RIGHT SIDE (RECRUITER INFO) */
+.contact-info {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+}
+
+.contact-info h3 {
+    color: #c084fc;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* BUTTONS */
+.info-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-btn {
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* Individual styles */
+.linkedin {
+    background: #0077b5;
+    color: white;
+}
+
+.github {
+    background: #333;
+    color: white;
+}
+
+.resume {
+    background: #c084fc;
+    color: black;
+}
+
+/* HOVER EFFECT */
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   9. Mobile Responsiveness
+   ========================================= */
+@media (max-width: 992px) {
+    .projects-grid, .achievements-grid, .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
+    .education-grid, .projects-grid, .achievements-grid, .skills-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .nav-links { display: none; }
+}
