@@ -1,20 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. Typing Effect Logic ---
+
+    // --- 1. Typing Effect ---
     const textElement = document.getElementById("typing-text");
-    const titles = ["Problem Solver", "Web Developer", "Cloud Enthusiast"];
-    let titleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
+    const titles = ["Problem Solver", "Full-Stack Developer", "Cloud Enthusiast"];
+    let titleIndex = 0, charIndex = 0, isDeleting = false, typeSpeed = 100;
 
     function type() {
         const currentTitle = titles[titleIndex];
-        
+
         if (isDeleting) {
             textElement.textContent = currentTitle.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50; 
+            typeSpeed = 50;
         } else {
             textElement.textContent = currentTitle.substring(0, charIndex + 1);
             charIndex++;
@@ -23,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!isDeleting && charIndex === currentTitle.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             titleIndex = (titleIndex + 1) % titles.length;
@@ -33,11 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(type, typeSpeed);
     }
 
-    // Start typing if element exists
     if (textElement) type();
 
 
-    // --- 2. Active Link Highlight on Scroll ---
+    // --- 2. Active Nav Highlight on Scroll ---
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section, header');
 
@@ -45,17 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let current = '';
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Adjusted offset (90px) to account for the fixed navbar height
-            if (window.pageYOffset >= (sectionTop - 100)) {
+            if (window.pageYOffset >= section.offsetTop - 120) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            // Check if href matches the current section ID
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
@@ -63,11 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // --- 3. Scroll Reveal Animation (Intersection Observer) ---
-    const observerOptions = {
-        threshold: 0.15
-    };
-
+    // --- 3. Scroll Reveal ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -75,35 +63,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 entry.target.style.transform = "translateY(0)";
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Apply reveal styles and observe sections
     document.querySelectorAll('section').forEach(section => {
         section.style.opacity = "0";
-        section.style.transform = "translateY(30px)";
-        section.style.transition = "all 0.8s ease-out";
+        section.style.transform = "translateY(24px)";
+        section.style.transition = "opacity 0.7s ease-out, transform 0.7s ease-out";
         observer.observe(section);
     });
 
 
-    // --- 4. Show More Achievements Toggle ---
-    const achBtn = document.getElementById('showMoreAchievements');
-    const hiddenAch = document.querySelectorAll('.achievement-card.hidden-item');
+    // --- 4. Hamburger Mobile Menu ---
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav-links');
 
-    if (achBtn) {
-        achBtn.addEventListener('click', () => {
-            hiddenAch.forEach(item => {
-                // We use a specific display toggle to ensure it overrides CSS hidden-item
-                if (item.style.display === "flex") {
-                    item.style.display = "none";
-                } else {
-                    item.style.display = "flex";
-                }
-            });
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
 
-            // Toggle Button Text
-            achBtn.innerText = achBtn.innerText === "Show More" ? "Show Less" : "Show More";
+        // Close on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('open'));
         });
     }
-});
 
+});

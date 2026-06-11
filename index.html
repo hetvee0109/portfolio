@@ -9,275 +9,420 @@
 </head>
 <body>
 
+    <!-- ========== NAVBAR ========== -->
     <nav class="navbar">
         <div class="nav-container">
+            <a href="#home" class="nav-logo">HR<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact" class="nav-btn">Contact Me</a></li>
+                <li><a href="#contact" class="nav-cta">Contact Me</a></li>
             </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- ========== HERO ========== -->
     <header class="hero" id="home">
         <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Hetvee Rabara</span></h1>
-            <p>I am a <span id="typing-text"></span><span class="cursor">|</span></p> 
-            
+            <p class="hero-eyebrow">👋 Hello, I'm</p>
+            <h1>Hetvee <span class="highlight">Rabara</span></h1>
+            <p class="hero-subtitle">I am a <span id="typing-text"></span><span class="cursor">|</span></p>
+
+            <p class="hero-bio">
+                Final-year B.Tech IT student at DDU · CGPA 8.79 · Building full-stack solutions with Java, Spring Boot & React.
+            </p>
+
             <div class="social-links-hero">
-                <a href="https://github.com/hetvee0109" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/hetvee-rabara-a7334929a/" target="_blank">LinkedIn</a>
-                <a href="https://leetcode.com/hetvee0109" target="_blank">LeetCode</a>
-                <a href="https://codolio.com/profile/hetvee0109" target="_blank">Codolio</a>
+                <a href="https://github.com/hetvee0109" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/hetvee-rabara-a7334929a/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://leetcode.com/hetvee0109" target="_blank" aria-label="LeetCode">
+                    <i class="fas fa-code"></i> LeetCode
+                </a>
+                <a href="https://codolio.com/profile/hetvee0109" target="_blank" aria-label="Codolio">
+                    <i class="fas fa-chart-bar"></i> Codolio
+                </a>
             </div>
 
-            <a href="assets/HETVEE_RABARA_RESUME.pdf" download="Hetvee_Resume" class="btn">
-                Download Resume
-            </a>
+            <div class="hero-actions">
+                <a href="assets/Resume.pdf" download="Hetvee_Resume" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
         </div>
+
         <div class="hero-image">
-            <img src="photos/Hetvee_Profile_Professional.jpeg" alt="Hetvee Rabara">
+            <div class="hero-img-wrapper">
+                <img src="photos/Hetvee_Profile_Professional.jpeg" alt="Hetvee Rabara">
+            </div>
+            <div class="hero-stats">
+                <div class="stat-chip">
+                    <span class="stat-num">150+</span>
+                    <span class="stat-label">LeetCode</span>
+                </div>
+                <div class="stat-chip">
+                    <span class="stat-num">8.79</span>
+                    <span class="stat-label">CGPA</span>
+                </div>
+                <div class="stat-chip">
+                    <span class="stat-num">2⭐</span>
+                    <span class="stat-label">CodeChef</span>
+                </div>
+            </div>
         </div>
     </header>
 
+    <!-- ========== EDUCATION ========== -->
     <section id="education" class="section-padding">
         <div class="container">
             <h2 class="section-title">Education</h2>
             <div class="education-grid">
+
                 <div class="info-card">
                     <div class="card-header">
-                        <h3>B.tech in Information Technology</h3>
-                        <span class="date-tag">2023 - 2027</span>
+                        <div>
+                            <p class="card-eyebrow">Undergraduate</p>
+                            <h3>B.Tech in Information Technology</h3>
+                        </div>
+                        <span class="date-tag">2023 – 2027</span>
                     </div>
                     <p class="institution">Dharmsinh Desai University</p>
                     <ul class="skill-list">
-                        <li><span class="skill-label">CGPA:</span> 8.95 / 10.0 (Current)</li>
-                        <li><span class="skill-label">Focus:</span> Full Stack Development, DSA, Cloud Computing</li>
+                        <li><span class="skill-label">CGPA:</span> 8.79 / 10.0 (till 6th sem)</li>
+                        <li><span class="skill-label">Focus:</span> Software Development, DSA, Machine Learning, Cloud Computing</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
                     <div class="card-header">
-                        <h3>Higher Secondary Education (HSC)</h3>
-                        <span class="date-tag">2021 - 2023</span>
+                        <div>
+                            <p class="card-eyebrow">Higher Secondary</p>
+                            <h3>HSC Science (PCM)</h3>
+                        </div>
+                        <span class="date-tag">2021 – 2023</span>
                     </div>
-                    <p class="institution">Modi Schools </p>
+                    <p class="institution">Modi Schools</p>
                     <ul class="skill-list">
-                        <li><span class="skill-label">Percentage:</span> 79%</li>
-                        <li><span class="skill-label">Stream:</span> Science (PCM)</li>
+                        <li><span class="skill-label">Percentage:</span> 78.15%</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
                     <div class="card-header">
-                        <h3>Secondary Education (SSC)</h3>
-                        <span class="date-tag">2020 - 2021</span>
+                        <div>
+                            <p class="card-eyebrow">Secondary</p>
+                            <h3>SSC</h3>
+                        </div>
+                        <span class="date-tag">2020 – 2021</span>
                     </div>
-                    <p class="institution">Aum Vidya Mandir </p>
+                    <p class="institution">Aum Vidya Mandir</p>
                     <ul class="skill-list">
-                        <li><span class="skill-label">Percentage:</span> 94%</li>
+                        <li><span class="skill-label">Percentage:</span> 94.14%</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ========== PROJECTS ========== -->
     <section id="projects" class="section-padding">
         <div class="container">
             <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-            <h3 class="category-subtitle">Web Development</h3>
+
+            <div class="category-label">
+                <span class="category-dot"></span> Web Development
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Placement Portal</h3>
-                    <p>Full-stack web application for managing campus recruitment processes, including student registration, job postings, and application tracking.</p>
+
+                <div class="project-card featured">
+                    <div class="project-badge">Capstone</div>
+                    <h3>Placement Management Portal</h3>
+                    <p>Full-stack campus placement system with role-based access for Student & TPO. Features automatic eligibility validation (CPI, 10th, 12th %), a one-job-per-student policy, JWT-secured college email auth, resume uploads, notice starring with 7-day expiry, and exportable placed-student reports.</p>
                     <div class="tech-tags">
-                        <span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Spring Boot</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">Hibernate</span>
                     </div>
                     <div class="project-footer">
-                        <a href="https://github.com/hetvee0109/Placement_Portal" class="github-link"><i><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="18"></i> View Code</a>
+                        <a href="https://github.com/hetvee0109/Placement_Portal" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <h3>College Management System</h3>
-                    <p>Full-stack system to manage student records, faculty details, and academic activities with secure authentication and role-based access.</p>
+                    <p>Academic portal with HOD, Faculty, and Student dashboards for attendance, results, assignments, timetables, fees, PDF submissions, and leave management all with custom role-based authentication.</p>
                     <div class="tech-tags">
-                        <span class="tag">Django</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">SQLite</span>
                     </div>
                     <div class="project-footer">
-                        <a href="https://github.com/hetvee0109/college-managment-system" class="github-link"><i><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="18"></i> View Code</a>
+                        <a href="https://github.com/hetvee0109/college-managment-system" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <h3>Yatra Vahan Sewa</h3>
-                    <p>Web-based platform for managing vehicle bookings and travel services with user-friendly interface.</p>
+                    <p>Web-based platform for managing vehicle bookings and travel services with a user-friendly interface for seamless journey planning.</p>
                     <div class="tech-tags">
-                        <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
                     </div>
                     <div class="project-footer">
-                        <a href="https://github.com/hetvee0109/yatra-vahan-sewa" class="github-link"><i><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="18"></i> View Code</a>
+                        <a href="https://github.com/hetvee0109/yatra-vahan-sewa" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
-            </div>
-            <br>
-            <br>
 
-            <h3 class="category-subtitle">App Development</h3>
+            </div>
+
+            <div class="category-label" style="margin-top: 60px;">
+                <span class="category-dot"></span> App Development
+            </div>
             <div class="projects-grid">
+
                 <div class="project-card">
                     <h3>Trip Planner & Expense Tracker</h3>
-                    <p>Mobile application to plan trips, manage itineraries, and track travel expenses with organized budgeting and location-based features.</p>
-                    <div class="tech-tags"><span class="tag">Java</span><span class="tag">Android Studio</span></div>
+                    <p>Android application to plan trips, manage itineraries, and track travel expenses with organized budgeting and location-based features.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Android Studio</span>
+                    </div>
                     <div class="project-footer">
-                        <a href="https://github.com/hetvee0109/travel-planner-android" class="github-link"><i><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="18"></i> View Code</a>
+                        <a href="https://github.com/hetvee0109/travel-planner-android" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
-            </div>
-            <br>
-            <br>
 
-            <h3 class="category-subtitle">Core Subject Projects</h3>
+            </div>
+
+            <div class="category-label" style="margin-top: 60px;">
+                <span class="category-dot"></span> Core Subject Projects
+            </div>
             <div class="projects-grid">
+
                 <div class="project-card">
                     <h3>Hospital Management System</h3>
-                    <p>Database-driven system to manage patient records, appointments, and hospital operations efficiently using structured data handling.</p>
-                    <div class="tech-tags"><span class="tag">DBMS</span><span class="tag">SQL</span></div>
+                    <p>Database-driven system to manage patient records, appointments, and hospital operations using structured relational data handling.</p>
+                    <div class="tech-tags">
+                        <span class="tag">DBMS</span>
+                        <span class="tag">SQL</span>
+                    </div>
                     <div class="project-footer">
-                        <a href="https://github.com/hetvee0109/DBMS_Project" class="github-link"><i><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="18"></i> View Code</a>
+                        <a href="https://github.com/hetvee0109/DBMS_Project" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <h3>Small Restaurant System</h3>
-                    <p>Object-oriented application to manage orders, menu items, and billing processes, demonstrating core OOP principles.</p>
-                    <div class="tech-tags"><span class="tag">Core Java</span><span class="tag">OOPS</span></div>
+                    <h3>Restaurant Management System</h3>
+                    <p>Console-based application to book tables, place orders, and generate bills. Includes an AWT-powered feedback form with persistent text-file storage.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Core Java</span>
+                        <span class="tag">OOP</span>
+                        <span class="tag">AWT</span>
+                    </div>
                     <div class="project-footer">
-                        <a href="https://github.com/hetvee0109/JavaProject_sem3" class="github-link"><i><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="18"></i> View Code</a>
+                        <a href="https://github.com/hetvee0109/JavaProject_sem3" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ========== SKILLS ========== -->
     <section id="skills" class="section-padding">
         <div class="container">
             <h2 class="section-title">Technical <span class="highlight">Expertise</span></h2>
             <div class="skills-container">
+
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
                     <h3>Development</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-label">Frontend:</span> HTML5 , CSS3 , JavaScript , React</li>
-                        <li><span class="skill-label">Backend:</span> Spring Boot , Django</li>
+                        <li><span class="skill-label">Languages:</span> Java, Python, JavaScript</li>
+                        <li><span class="skill-label">Frontend:</span> HTML5, CSS3, React, Tailwind CSS</li>
+                        <li><span class="skill-label">Backend:</span> Spring Boot, Django</li>
                     </ul>
                 </div>
+
                 <div class="skill-card">
                     <div class="skill-icon">🧠</div>
-                    <h3>DSA</h3>
+                    <h3>DSA & Problem Solving</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-label">Linear:</span> Arrays , Lists , Stacks , Queue</li>
-                        <li><span class="skill-label">Non Linear:</span> Hash Map</li>
-                        <li><span class="skill-label">Logic:</span> Recursion , Binary Search</li>
+                        <li><span class="skill-label">Linear:</span> Arrays, Lists, Stacks, Queue</li>
+                        <li><span class="skill-label">Non-Linear:</span> Hash Map</li>
+                        <li><span class="skill-label">Techniques:</span> Recursion, Binary Search</li>
                     </ul>
                 </div>
+
                 <div class="skill-card">
                     <div class="skill-icon">📚</div>
                     <h3>Core CS</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-label">Databases:</span> DBMS , SQL</li>
-                        <li><span class="skill-label">Systems:</span> Operating Systems , Computer Networks , Compiler Design , </li>
+                        <li><span class="skill-label">Databases:</span> MySQL, PostgreSQL, SQLite</li>
+                        <li><span class="skill-label">Concepts:</span> DBMS, OS, CN, Compiler Design</li>
+                        <li><span class="skill-label">Tools:</span> Git, GitHub, IntelliJ, VS Code</li>
                     </ul>
                 </div>
+
                 <div class="skill-card">
                     <div class="skill-icon">☁️</div>
-                    <h3>Cloud</h3>
+                    <h3>Cloud & Others</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-label">AWS:</span> Cloud Practitioner (continue)</li>
+                        <li><span class="skill-label">AWS:</span> Cloud Foundations, ML Foundations</li>
+                        <li><span class="skill-label">Platforms:</span> Render, Netlify</li>
+                        <li><span class="skill-label">Currently:</span> AWS Cloud Practitioner (in progress)</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-<section id="achievements" class="section-padding">
-  <div class="container">
-    <h2 class="section-title">Achievements</h2>
+    <!-- ========== ACHIEVEMENTS ========== -->
+    <section id="achievements" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
 
-    <div class="achievements-grid">
+                <div class="info-card achievement-card">
+                    <div class="skill-icon">🏆</div>
+                    <h3>Competitive Programming</h3>
+                    <ul class="skill-list">
+                        <li>Solved <strong>150+</strong> problems on LeetCode</li>
+                        <li>CodeChef <strong>2⭐ Rating</strong></li>
+                    </ul>
+                </div>
 
-      <!-- CARD 1: CODING -->
-      <div class="info-card achievement-card">
-        <div class="skill-icon">🏆</div>
-        <h3>Coding Platforms</h3>
-        <p>
-          Solved 150+ problems on LeetCode <br>
-          CodeChef 2⭐ Rating
-        </p>
-      </div>
+                <div class="info-card achievement-card">
+                    <div class="skill-icon">🛡️</div>
+                    <h3>AWS Academy</h3>
+                    <ul class="skill-list">
+                        <li>
+                            AWS Academy Cloud Foundations Badge
+                            <a href="photos/Hetvee_AWS.png" target="_blank" class="cert-inline-btn">View</a>
+                        </li>
+                        <li>
+                            AWS Academy ML Foundations Badge
+                            <a href="photos/Hetvee_AWS_ML.png" target="_blank" class="cert-inline-btn">View</a>
+                        </li>
+                    </ul>
+                </div>
 
-      <!-- CARD 2: AWS -->
-      <div class="info-card achievement-card">
-        <div class="skill-icon">🛡️</div>
-        <h3>AWS Academy</h3>
-        <p>AWS Academy Cloud Foundations Badge</p>
-        <a href="C:\Users\admin\Desktop\Hetvee_Portfolio\photos\Hetvee_AWS.png" target="_blank" class="cert-btn">View Certificate</a>
-      </div>
+                <div class="info-card achievement-card">
+                    <div class="skill-icon">📜</div>
+                    <h3>Certifications</h3>
+                    <ul class="skill-list">
+                        <li>
+                            NPTEL DBMS — <strong>Top 5%</strong>
+                            <a href="photos/Hetvee_NPTEL.png" target="_blank" class="cert-inline-btn">View</a>
+                        </li>
+                        <li>
+                            DU Hacks 5.0 Participant
+                            <a href="photos/Hetvee_DUHacks_5.jpeg" target="_blank" class="cert-inline-btn">View</a>
+                        </li>
+                        <li>
+                            CodeChef SQL Certification
+                            <a href="C:\Users\admin\Desktop\Hetvee_Portfolio\photos\Hetvee_CodeChef_SQL.png" target="_blank" class="cert-inline-btn">View</a>
+                        </li>
+                    </ul>
+                </div>
 
-      <!-- CARD 3: CERTIFICATES -->
-      <div class="info-card achievement-card">
-        <div class="skill-icon">📜</div>
-        <h3>Certifications</h3>
-
-        <div class="cert-links">
-          <a href="C:\Users\admin\Desktop\Hetvee_Portfolio\photos\Hetvee_NPTEL.png" target="_blank">NPTEL DBMS (Top 5%)</a>
-          <br>
-          <a href="C:\Users\admin\Desktop\Hetvee_Portfolio\photos\Hetvee_DUHacks_5.jpeg" target="_blank">DU Hacks 5.0</a>
+            </div>
         </div>
-      </div>
+    </section>
 
-    </div>
-
-    <div class="show-more-container">
-      <button id="showMoreAchievements" class="show-more-btn">Show More</button>
-    </div>
-  </div>
-</section>
-
+    <!-- ========== CONTACT ========== -->
     <section id="contact" class="section-padding">
-  <div class="container">
-    <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+        <div class="container">
+            <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+            <p class="section-subtitle">Open to internship opportunities and collaborations. Let's connect!</p>
 
-    <div class="contact-wrapper">
+            <div class="contact-wrapper">
 
-      <!-- LEFT: CONTACT FORM -->
-      <div class="contact-form-container">
-        <form action="https://formspree.io/f/mqegelrg" method="POST" class="contact-form">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="message" placeholder="Message" rows="5" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
+                <div class="contact-form-container">
+                    <form action="https://formspree.io/f/mqegelrg" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
 
-      <!-- RIGHT: RECRUITER INFO -->
-      <div class="contact-info">
-        <h3>Connect with Me</h3>
-        <p>Feel free to reach out for opportunities or collaboration.</p>
+                <div class="contact-info">
+                    <h3>Let's Build Something</h3>
+                    <p>Feel free to reach out for internship opportunities, project collaborations, or just a tech chat.</p>
 
-        <div class="info-item">
-          📧 <span>hetvee.rabara@gmail.com</span>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hetvee.rabara@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ahmedabad, Gujarat, India</span>
+                    </div>
+
+                    <div class="info-buttons">
+                        <a href="https://www.linkedin.com/in/hetvee-rabara-a7334929a/" target="_blank" class="social-btn linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/hetvee0109" target="_blank" class="social-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="assets/Resume.pdf" download="Hetvee_Resume" class="social-btn resume">
+                            <i class="fas fa-file-alt"></i> Resume
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="info-buttons">
-          <a href="https://www.linkedin.com/in/hetvee-rabara-a7334929a/" target="_blank" class="social-btn linkedin">LinkedIn</a>
-          <a href="https://github.com/hetvee0109" target="_blank" class="social-btn github">GitHub</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p>Designed & Built by <span class="highlight">Hetvee Rabara</span> · 2025</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
